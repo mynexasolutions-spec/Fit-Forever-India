@@ -10,10 +10,10 @@ if (!globalStore.inMemoryOrders) {
 
 export async function GET(
   request: Request,
-  { params }: { params: { id: string } }
+  { params }: { params: Promise<{ id: string }> }
 ) {
   try {
-    const { id } = params;
+    const { id } = await params;
     const { searchParams } = new URL(request.url);
     const customerId = searchParams.get('customerId') || request.headers.get('x-customer-id');
 

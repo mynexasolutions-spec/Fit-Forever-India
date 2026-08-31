@@ -5,10 +5,10 @@ export const dynamic = 'force-dynamic';
 
 export async function PUT(
   request: Request,
-  { params }: { params: { id: string } }
+  { params }: { params: Promise<{ id: string }> }
 ) {
   try {
-    const { id } = params;
+    const { id } = await params;
     const body = await request.json();
     const products = await updateSupabaseProduct(id, body);
     return NextResponse.json(products);
@@ -20,10 +20,10 @@ export async function PUT(
 
 export async function DELETE(
   request: Request,
-  { params }: { params: { id: string } }
+  { params }: { params: Promise<{ id: string }> }
 ) {
   try {
-    const { id } = params;
+    const { id } = await params;
     const products = await deleteSupabaseProduct(id);
     return NextResponse.json(products);
   } catch (error) {

@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useEffect, useState, use } from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import { useCustomerAuth } from '@/lib/customer-auth';
@@ -23,8 +23,8 @@ import { Card, CardContent } from '@/components/ui/card';
 import { Skeleton } from '@/components/ui/skeleton';
 import type { Order } from '@/lib/types';
 
-export default function OrderDetailPage({ params }: { params: { orderId: string } }) {
-  const { orderId } = params;
+export default function OrderDetailPage({ params }: { params: Promise<{ orderId: string }> }) {
+  const { orderId } = use(params);
   const { user } = useCustomerAuth();
   const router = useRouter();
   const [order, setOrder] = useState<Order | null>(null);
