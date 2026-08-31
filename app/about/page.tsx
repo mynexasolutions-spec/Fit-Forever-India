@@ -54,7 +54,7 @@ const VALUES = [
 ];
 
 const STATS = [
-  { value: '2006', label: 'Year Established', sub: 'Over 18 years of trust' },
+  { value: '2015', label: 'Year Established', sub: 'Over 11 years of trust' },
   { value: '100k+', label: 'Happy Customers', sub: 'Pan-India coverage' },
   { value: '50+', label: 'Product Range', sub: 'Massage chairs & fitness' },
   { value: '24/7', label: 'Dedicated Support', sub: 'Centralized helpdesk' },
@@ -62,17 +62,17 @@ const STATS = [
 
 const MILESTONES = [
   {
-    year: '2006',
+    year: '2015',
     title: 'Brand Foundation',
-    description: 'Fit Forever Private Limited established as a pioneer in telemarketing and health-care research products in India.',
+    description: 'Fit Forever India established as a premium luxury massage and fitness products manufacturer and leading retailer in India.',
   },
   {
-    year: '2012',
+    year: '2018',
     title: 'R&D Innovation Hub',
     description: 'Launched our dedicated in-house Research & Development facility to engineer fitness equipment for Indian households.',
   },
   {
-    year: '2018',
+    year: '2021',
     title: 'Pan-India Expansion',
     description: 'Expanded nationwide logistics and established physical showrooms in prime shopping destinations across India.',
   },
@@ -96,7 +96,7 @@ export default function AboutPage() {
       {/* Header Banner */}
       <PageHeader
         title="About Fit Forever India"
-        subtitle="Pioneering health-care research products, massage chairs, and fitness equipment in India since 2006."
+        subtitle="A premium luxury massage and fitness products manufacturer and leading retailer in India, since 2015."
         breadcrumb={[{ label: 'Home', href: '/' }, { label: 'About Us' }]}
       />
 
@@ -109,12 +109,24 @@ export default function AboutPage() {
                 <Sparkles className="h-3.5 w-3.5" />
                 Our Story & Legacy
               </div>
+
+              {/* Trust Badge: Manufacturer & Retailer Credential */}
+              <div className="mt-5 inline-flex items-center gap-3 rounded-2xl border border-primary/20 bg-primary/5 px-4 py-3">
+                <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-primary text-primary-foreground">
+                  <Award className="h-5 w-5" />
+                </div>
+                <p className="font-display text-sm font-bold leading-snug text-foreground sm:text-base">
+                  Premium luxury massage and fitness products manufacturer and leading retailer in India
+                  <span className="block text-xs font-semibold text-primary mt-0.5">Since 2015</span>
+                </p>
+              </div>
+
               <h2 className="mt-4 font-display text-3xl font-extrabold tracking-tight text-foreground sm:text-4xl lg:text-5xl leading-[1.15]">
                 Empowering Healthy Homes Across India
               </h2>
               <div className="mt-6 space-y-4 font-sans text-base leading-relaxed text-muted-foreground sm:text-lg">
                 <p>
-                  Fit Forever Private Limited is a telemarketing leader and pioneer in health-care research products and personal care equipment in India. We believe that premium wellness and fitness tools should be accessible to every household at direct, honest prices.
+                  Fit Forever India is a premium luxury massage and fitness products manufacturer and leading retailer in India, trusted by homes and businesses nationwide since 2015. We believe that premium wellness and fitness tools should be accessible to every household at direct, honest prices.
                 </p>
                 <p>
                   With our own state-of-the-art Research & Development facility, every massage chair, treadmill, and strength equipment is rigorously engineered, tested, and optimized before it enters your home.

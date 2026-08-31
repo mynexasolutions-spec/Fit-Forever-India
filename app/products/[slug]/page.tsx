@@ -752,6 +752,15 @@ export default function ProductDetailPage() {
                         ['Package Dimensions', product.packageSize || '150 x 80 x 120 cm'],
                       ]}
                     />
+
+                    {product.specifications && product.specifications.length > 0 && (
+                      <>
+                        <h3 className="mt-4 font-display text-lg font-bold text-slate-900 dark:text-white">
+                          Product Specifications
+                        </h3>
+                        <SpecTable rows={product.specifications.map((s) => [s.label, s.value])} />
+                      </>
+                    )}
                   </div>
                 )}
               </div>
