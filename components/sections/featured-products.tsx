@@ -12,10 +12,10 @@ export function FeaturedProducts({ products: initialProducts }: { products?: Pro
   const { products: dynamicProducts } = useProductsStore();
 
   // Combine initial server products and client dynamic store products
-  const allProducts = initialProducts && initialProducts.length > 0 ? initialProducts : dynamicProducts;
+  const allProducts = dynamicProducts && dynamicProducts.length > 0 ? dynamicProducts : (initialProducts || []);
 
-  // Filter ONLY products explicitly marked as featured by admin in database
-  const featuredList = allProducts.filter((p) => Boolean(p.featured));
+  // Filter ONLY products explicitly marked as featured by admin in database and in stock/active
+  const featuredList = allProducts.filter((p) => Boolean(p.featured) && p.inStock !== false);
   const items = featuredList.slice(0, 8);
 
   if (items.length === 0) return null;
